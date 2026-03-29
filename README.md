@@ -1,6 +1,6 @@
 # ECARM — Energy-Consistent Advanced Regional Model
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXXX)
+[![DOI](https://zenodo.org/badge/1195137030.svg)](https://doi.org/10.5281/zenodo.19311595)
 
 ECARM (Energy-Consistent Advanced Regional Model) is a modified dynamical
 core integrated into the WRF (Weather Research and Forecasting) modeling
@@ -130,7 +130,7 @@ If you use ECARM in your research, please cite:
 
 > Ren, X.-Y.: ECARM: Energy-Consistent Advanced Regional Model
 > (Version 1.0.0) [code], Zenodo,
-> https://doi.org/10.5281/zenodo.XXXXXXX, 2026.
+> https://doi.org/10.5281/zenodo.19311595, 2026.
 
 Also cite the underlying WRF framework:
 

@@ -1,0 +1,39 @@
+{
+  "title": "ECARM: Energy-Consistent Advanced Regional Model (Version 1.0.0)",
+  "description": "ECARM is a modified dynamical core integrated into the WRF v4.2 modeling framework. It replaces the default ARW dynamical core with an energy-consistent discretization scheme that reduces spurious energy sources and sinks, minimizing numerical dissipation and dispersion. The dynamical core adopts the Lamb form of the Navier-Stokes equations with hydrostatic balance decomposition, using u, v, w, density, density-weighted temperature, and moisture as prognostic variables. The model compilation, execution, and output are fully compatible with standard WRF v4.2.",
+  "upload_type": "software",
+  "access_right": "open",
+  "license": "other-pd",
+  "version": "1.0.0",
+  "language": "eng",
+  "creators": [
+    {
+      "name": "Ren, X.-Y.",
+      "affiliation": "Institute of Atmospheric Physics， Chinese Academy of Sciences",
+      "orcid": "0009-0008-7412-7000"
+    }
+  ],
+  "keywords": [
+    "dynamical core",
+    "energy-consistent discretization",
+    "atmospheric model",
+    "numerical weather prediction",
+    "WRF",
+    "ECARM",
+    "Navier-Stokes equations",
+    "Lamb form"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/wrf-model/WRF/releases/tag/v4.2",
+      "relation": "isDerivedFrom",
+      "scheme": "url"
+    },
+    {
+      "identifier": "10.5065/1dfh-6p97",
+      "relation": "references",
+      "scheme": "doi"
+    }
+  ],
+  "notes": "This software is based on the WRF model version 4.2, which is public domain software developed by NCAR/UCAR. Only the dynamical core (primarily in dyn_em/) has been replaced; all executable names, output file names, physics, and WPS compatibility remain identical to standard WRF v4.2."
+}

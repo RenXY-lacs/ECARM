@@ -1,0 +1,303 @@
+守恒算法 积分3个多小时。
+ 
+
+changetekip =    -3.890625      -1.627525       2.835938      -5.105469    
+Timing for main: time 0001-01-01_03:38:06 on domain   1:    0.04304 elapsed seconds
+full max uvwrp           98.39146        0.00000       32.36450        1.19899    98683.94531
+full min uvwrp          -66.31896        0.00000      -29.00719       -0.00474      -14.53462
+ sum_vtj =   1.1403250E+13
+  tmass =   0.5748771    
+ tekip =     134531.1       113.3740       101680.1       32737.65    
+ changetekip =    -3.765625      -1.615898       3.015625      -5.177734    
+Timing for main: time 0001-01-01_03:38:08 on domain   1:    0.04267 elapsed seconds
+full max uvwrp           99.29205        0.00000       32.41099        1.19907    98675.33594
+full min uvwrp          -65.41573        0.00000      -29.03322       -0.00536      -14.68351
+ sum_vtj =   1.1403250E+13
+  tmass =   0.5748769    
+ tekip =     134531.3       113.3863       101680.4       32737.55    
+ changetekip =    -3.593750      -1.603622       3.281250      -5.281250    
+Timing for main: time 0001-01-01_03:38:10 on domain   1:    0.04210 elapsed seconds
+full max uvwrp          100.06680        0.00000       32.56386        1.19914    98666.42188
+full min uvwrp          -64.34839        0.00000      -28.93565       -0.00568      -14.77187
+ sum_vtj =   1.1403250E+13
+  tmass =   0.5748793    
+ tekip =     134531.6       113.3989       101680.6       32737.59    
+ changetekip =    -3.343750      -1.591026       3.468750      -5.244141    
+Timing for main: time 0001-01-01_03:38:12 on domain   1:    0.04312 elapsed seconds
+full max uvwrp          100.72413        0.00000       32.67528        1.19921    98658.39844
+full min uvwrp          -63.15724        0.00000      -28.71839       -0.00566      -14.80370
+ sum_vtj =   1.1403250E+13
+  tmass =   0.5748782    
+ tekip =     134531.3       113.4116       101680.3       32737.55    
+ changetekip =    -3.609375      -1.578300       3.226562      -5.281250    
+Timing for main: time 0001-01-01_03:38:14 on domain   1:    0.04227 elapsed seconds
+full max uvwrp          101.27114        0.00000       32.74313        1.19928    98650.20312
+full min uvwrp          -61.88487        0.00000      -28.38799       -0.00531      -15.30448
+ sum_vtj =   1.1403250E+13
+  tmass =   0.5748779    
+ tekip =     134531.2       113.4241       101680.3       32737.45    
+ changetekip =    -3.687500      -1.565788       3.242188      -5.382812    
+Timing for main: time 0001-01-01_03:38:16 on domain   1:    0.04309 elapsed seconds
+full max uvwrp          101.71346        0.00000       32.76545        1.19935    98643.66406
+full min uvwrp          -60.57451        0.00000      -27.95340       -0.00467      -15.98604
+ sum_vtj =   1.1403250E+13
+  tmass =   0.5748783    
+ tekip =     134531.2       113.4370       101680.4       32737.35    
+ changetekip =    -3.703125      -1.552940       3.312500      -5.482422    
+Timing for main: time 0001-01-01_03:38:18 on domain   1:    0.04208 elapsed seconds
+full max uvwrp          102.05511        0.00000       32.74047        1.19942    98637.22656
+full min uvwrp          -59.26835        0.00000      -27.42560       -0.00560      -16.45716
+ sum_vtj =   1.1403250E+13
+  tmass =   0.5748786    
+ tekip =     134531.4       113.4498       101680.7       32737.30    
+ changetekip =    -3.484375      -1.540062       3.570312      -5.533203    
+Timing for main: time 0001-01-01_03:38:20 on domain   1:    0.04366 elapsed seconds
+full max uvwrp          102.29865        0.00000       32.66656        1.19948    98630.79688
+full min uvwrp          -58.00593        0.00000      -26.81706       -0.00629      -16.63936
+ sum_vtj =   1.1403250E+13
+  tmass =   0.5748789    
+ tekip =     134531.5       113.4622       101680.7       32737.27    
+ changetekip =    -3.453125      -1.527679       3.617188      -5.558594    
+Timing for main: time 0001-01-01_03:38:22 on domain   1:    0.04270 elapsed seconds
+full max uvwrp          102.44525        0.00000       32.54220        1.19954    98624.66406
+full min uvwrp          -57.86626        0.00000      -26.14110       -0.00669      -16.46689
+ sum_vtj =   1.1403250E+13
+  tmass =   0.5748796    
+ tekip =     134531.5       113.4741       101680.8       32737.28    
+ changetekip =    -3.406250      -1.515800       3.648438      -5.554688    
+Timing for main: time 0001-01-01_03:38:24 on domain   1:    0.04303 elapsed seconds
+full max uvwrp          102.49502        0.00000       32.36604        1.19959    98620.34375
+full min uvwrp          -58.37836        0.00000      -25.55866       -0.00678      -15.88717
+ sum_vtj =   1.1403250E+13
+  tmass =   0.5748785    
+ tekip =     134531.2       113.4858       101680.6       32737.18    
+ changetekip =    -3.687500      -1.504112       3.460938      -5.652344    
+Timing for main: time 0001-01-01_03:38:26 on domain   1:    0.04281 elapsed seconds
+full max uvwrp          102.44727        0.00000       32.13687        1.19964    98617.96094
+full min uvwrp          -58.84885        0.00000      -25.48796       -0.00654      -14.88435
+ sum_vtj =   1.1403250E+13
+  tmass =   0.5748773    
+ tekip =     134531.5       113.4965       101680.8       32737.21    
+ changetekip =    -3.453125      -1.493393       3.648438      -5.625000    
+Timing for main: time 0001-01-01_03:38:28 on domain   1:    0.04242 elapsed seconds
+full max uvwrp          102.30083        0.00000       31.85383        1.19968    98615.60156
+full min uvwrp          -59.27671        0.00000      -25.34403       -0.00601      -13.47060
+ sum_vtj =   1.1403250E+13
+  tmass =   0.5748791    
+ tekip =     134531.4       113.5064       101680.7       32737.19    
+ changetekip =    -3.484375      -1.483505       3.617188      -5.636719    
+Timing for main: time 0001-01-01_03:38:30 on domain   1:    0.04324 elapsed seconds
+full max uvwrp          102.05430        0.00000       31.51639        1.19972    98612.97656
+full min uvwrp          -59.66048        0.00000      -25.12891       -0.00522      -12.81315
+ sum_vtj =   1.1403250E+13
+  tmass =   0.5748786    
+ tekip =     134531.5       113.5159       101680.8       32737.17    
+ changetekip =    -3.406250      -1.474045       3.710938      -5.658203    
+Timing for main: time 0001-01-01_03:38:32 on domain   1:    0.04220 elapsed seconds
+full max uvwrp          101.70611        0.00000       31.12453        1.19975    98611.63281
+full min uvwrp          -59.99827        0.00000      -24.84604       -0.00425      -12.54257
+ sum_vtj =   1.1403250E+13
+  tmass =   0.5748760    
+ tekip =     134531.7       113.5240       101681.0       32737.14    
+ changetekip =    -3.250000      -1.465935       3.882812      -5.685547    
+Timing for main: time 0001-01-01_03:38:34 on domain   1:    0.04307 elapsed seconds
+full max uvwrp          101.25465        0.00000       30.67879        1.19977    98610.00781
+full min uvwrp          -60.28791        0.00000      -24.51964       -0.00421      -12.13009
+ sum_vtj =   1.1403250E+13
+  tmass =   0.5748767    
+ tekip =     134531.7       113.5319       101681.1       32737.09    
+ changetekip =    -3.187500      -1.458000       3.992188      -5.744141    
+Timing for main: time 0001-01-01_03:38:36 on domain   1:    0.04218 elapsed seconds
+full max uvwrp          100.69819        0.00000       30.18041        1.19979    98608.10938
+full min uvwrp          -60.52723        0.00000      -24.56667       -0.00436      -11.59735
+ sum_vtj =   1.1403250E+13
+  tmass =   0.5748771    
+ tekip =     134531.7       113.5388       101681.1       32737.05    
+ changetekip =    -3.234375      -1.451126       3.976562      -5.775391    
+Timing for main: time 0001-01-01_03:38:38 on domain   1:    0.04302 elapsed seconds
+full max uvwrp          100.03487        0.00000       29.63135        1.19980    98605.92188
+full min uvwrp          -60.71423        0.00000      -24.53679       -0.00427      -11.45084
+ sum_vtj =   1.1403250E+13
+  tmass =   0.5748779    
+ tekip =     134531.6       113.5455       101680.9       32737.06    
+ changetekip =    -3.343750      -1.444374       3.843750      -5.765625    
+Timing for main: time 0001-01-01_03:38:40 on domain   1:    0.04195 elapsed seconds
+full max uvwrp           99.26266        0.00000       29.03432        1.19980    98603.45312
+full min uvwrp          -60.84741        0.00000      -24.43184       -0.00397      -11.30711
+ sum_vtj =   1.1403250E+13
+  tmass =   0.5748778    
+ tekip =     134531.6       113.5507       101681.0       32737.06    
+ changetekip =    -3.312500      -1.439171       3.890625      -5.771484    
+Timing for main: time 0001-01-01_03:38:42 on domain   1:    0.04352 elapsed seconds
+full max uvwrp           98.37946        0.00000       28.39273        1.19980    98600.67969
+full min uvwrp          -60.92589        0.00000      -24.25465       -0.00348      -11.06760
+ sum_vtj =   1.1403250E+13
+  tmass =   0.5748786    
+ tekip =     134531.5       113.5561       101680.9       32737.12    
+ changetekip =    -3.375000      -1.433800       3.750000      -5.708984    
+Timing for main: time 0001-01-01_03:38:44 on domain   1:    0.04205 elapsed seconds
+full max uvwrp           98.74252        0.00000       27.86541        1.19979    98597.60938
+full min uvwrp          -60.94952        0.00000      -24.00899       -0.00341      -11.36854
+ sum_vtj =   1.1403250E+13
+  tmass =   0.5748786    
+ tekip =     134531.8       113.5611       101681.1       32737.14    
+ changetekip =    -3.125000      -1.428848       3.976562      -5.691406    
+Timing for main: time 0001-01-01_03:38:46 on domain   1:    0.04309 elapsed seconds
+full max uvwrp          100.23308        0.00000       27.39472        1.19978    98594.25000
+full min uvwrp          -60.91882        0.00000      -23.69953       -0.00352      -11.77277
+ sum_vtj =   1.1403250E+13
+  tmass =   0.5748782    
+ tekip =     134531.8       113.5651       101681.0       32737.15    
+ changetekip =    -3.156250      -1.424774       3.929688      -5.675781    
+Timing for main: time 0001-01-01_03:38:48 on domain   1:    0.04214 elapsed seconds
+full max uvwrp          101.49436        0.00000       26.88052        1.19976    98590.61719
+full min uvwrp          -60.83497        0.00000      -23.33171       -0.00356      -12.17634
+ sum_vtj =   1.1403250E+13
+  tmass =   0.5748789    
+ tekip =     134531.6       113.5687       101680.9       32737.20    
+ changetekip =    -3.265625      -1.421219       3.773438      -5.632812    
+Timing for main: time 0001-01-01_03:38:50 on domain   1:    0.04327 elapsed seconds
+full max uvwrp          102.52180        0.00000       26.32590        1.19973    98586.75781
+full min uvwrp          -60.69966        0.00000      -22.91161       -0.00353      -12.57260
+ sum_vtj =   1.1403250E+13
+  tmass =   0.5748789    
+ tekip =     134531.5       113.5722       101680.8       32737.17    
+ changetekip =    -3.375000      -1.417725       3.687500      -5.658203    
+Timing for main: time 0001-01-01_03:38:52 on domain   1:    0.04212 elapsed seconds
+full max uvwrp          103.31355        0.00000       25.73443        1.19970    98582.70312
+full min uvwrp          -60.51499        0.00000      -22.44578       -0.00343      -12.95934
+ sum_vtj =   1.1403250E+13
+  tmass =   0.5748795    
+ tekip =     134531.7       113.5748       101680.9       32737.23    
+ changetekip =    -3.187500      -1.415085       3.820312      -5.603516    
+Timing for main: time 0001-01-01_03:38:54 on domain   1:    0.04342 elapsed seconds
+full max uvwrp          103.87045        0.00000       25.11016        1.19967    98578.53125
+full min uvwrp          -60.28347        0.00000      -21.94103       -0.00326      -13.33615
+ sum_vtj =   1.1403250E+13
+  tmass =   0.5748774    
+ tekip =     134531.6       113.5774       101680.8       32737.30    
+ changetekip =    -3.281250      -1.412544       3.648438      -5.531250    
+Timing for main: time 0001-01-01_03:38:56 on domain   1:    0.04280 elapsed seconds
+full max uvwrp          104.19611        0.00000       24.45750        1.19963    98574.28906
+full min uvwrp          -60.00805        0.00000      -21.76440       -0.00314      -13.70289
+ sum_vtj =   1.1403250E+13
+  tmass =   0.5748777    
+ tekip =     134531.6       113.5796       101680.6       32737.36    
+ changetekip =    -3.312500      -1.410332       3.546875      -5.470703    
+Timing for main: time 0001-01-01_03:38:58 on domain   1:    0.04386 elapsed seconds
+full max uvwrp          104.29692        0.00000       23.78123        1.19959    98572.32031
+full min uvwrp          -59.69217        0.00000      -21.64819       -0.00323      -14.05945
+ sum_vtj =   1.1403250E+13
+  tmass =   0.5748782    
+ tekip =     134531.7       113.5816       101680.7       32737.38    
+ changetekip =    -3.234375      -1.408279       3.617188      -5.449219    
+Timing for main: time 0001-01-01_03:39:00 on domain   1:    0.04253 elapsed seconds
+Timing for Writing wrfout_d01_0001-01-01_03:39:00 for domain        1:    0.00814 elapsed seconds
+full max uvwrp          104.23972        0.00000       23.08640        1.19955    98572.50781
+full min uvwrp          -59.33992        0.00000      -21.48445       -0.00349      -14.40643
+ sum_vtj =   1.1403250E+13
+  tmass =   0.5748781    
+ tekip =     134531.7       113.5830       101680.7       32737.42    
+ changetekip =    -3.187500      -1.406860       3.601562      -5.408203    
+Timing for main: time 0001-01-01_03:39:02 on domain   1:    0.05251 elapsed seconds
+full max uvwrp          104.42041        0.00000       22.37818        1.19950    98574.67188
+full min uvwrp          -59.33905        0.00000      -21.32112       -0.00369      -14.73355
+ sum_vtj =   1.1403250E+13
+  tmass =   0.5748787    
+ tekip =     134531.8       113.5845       101680.7       32737.54    
+ changetekip =    -3.093750      -1.405350       3.578125      -5.291016    
+Timing for main: time 0001-01-01_03:39:04 on domain   1:    0.04170 elapsed seconds
+full max uvwrp          104.37499        0.00000       22.09445        1.19945    98577.42188
+full min uvwrp          -59.87527        0.00000      -21.48833       -0.00382      -15.02779
+ sum_vtj =   1.1403250E+13
+  tmass =   0.5748794    
+ tekip =     134531.7       113.5858       101680.5       32737.59    
+ changetekip =    -3.250000      -1.404083       3.382812      -5.242188    
+Timing for main: time 0001-01-01_03:39:06 on domain   1:    0.04389 elapsed seconds
+full max uvwrp          104.11143        0.00000       22.20856        1.19940    98580.40625
+full min uvwrp          -60.33474        0.00000      -21.63545       -0.00385      -15.26892
+ sum_vtj =   1.1403250E+13
+  tmass =   0.5748776    
+ tekip =     134531.6       113.5869       101680.4       32737.59    
+ changetekip =    -3.343750      -1.403030       3.289062      -5.238281    
+Timing for main: time 0001-01-01_03:39:08 on domain   1:    0.04282 elapsed seconds
+full max uvwrp          103.63976        0.00000       22.30595        1.19934    98583.57812
+full min uvwrp          -60.70530        0.00000      -21.76269       -0.00378      -15.43408
+ sum_vtj =   1.1403250E+13
+  tmass =   0.5748789    
+ tekip =     134531.6       113.5879       101680.4       32737.60    
+ changetekip =    -3.296875      -1.402046       3.328125      -5.230469    
+Timing for main: time 0001-01-01_03:39:10 on domain   1:    0.04223 elapsed seconds
+full max uvwrp          102.97180        0.00000       22.38651        1.19929    98586.89844
+full min uvwrp          -60.97577        0.00000      -21.87035       -0.00406      -15.49998
+ sum_vtj =   1.1403250E+13
+  tmass =   0.5748780    
+ tekip =     134531.6       113.5892       101680.4       32737.65    
+ changetekip =    -3.265625      -1.400658       3.304688      -5.177734    
+Timing for main: time 0001-01-01_03:39:12 on domain   1:    0.04300 elapsed seconds
+full max uvwrp          102.12079        0.00000       22.45023        1.19923    98595.70312
+full min uvwrp          -61.13584        0.00000      -21.95893       -0.00460      -15.45119
+ sum_vtj =   1.1403250E+13
+  tmass =   0.5748775    
+ tekip =     134531.7       113.5910       101680.4       32737.69    
+ changetekip =    -3.250000      -1.398888       3.265625      -5.142578    
+Timing for main: time 0001-01-01_03:39:14 on domain   1:    0.04285 elapsed seconds
+full max uvwrp          101.10120        0.00000       22.49723        1.19917    98604.80469
+full min uvwrp          -61.17610        0.00000      -22.03279       -0.00505      -15.27213
+ sum_vtj =   1.1403250E+13
+  tmass =   0.5748790    
+ tekip =     134531.6       113.5924       101680.3       32737.69    
+ changetekip =    -3.328125      -1.397453       3.195312      -5.136719    
+Timing for main: time 0001-01-01_03:39:16 on domain   1:    0.04268 elapsed seconds
+full max uvwrp          102.31888        0.00000       22.52769        1.19912    98613.67188
+full min uvwrp          -61.08781        0.00000      -22.10687       -0.00539      -14.96381
+ sum_vtj =   1.1403250E+13
+  tmass =   0.5748789    
+ tekip =     134531.5       113.5945       101680.2       32737.68    
+ changetekip =    -3.406250      -1.395370       3.132812      -5.154297    
+Timing for main: time 0001-01-01_03:39:18 on domain   1:    0.04213 elapsed seconds
+full max uvwrp          104.38722        0.00000       22.54196        1.19907    98622.28125
+full min uvwrp          -60.86285        0.00000      -22.15198       -0.00559      -14.52759
+ sum_vtj =   1.1403250E+13
+  tmass =   0.5748779    
+ tekip =     134531.4       113.5966       101680.1       32737.66    
+ changetekip =    -3.515625      -1.393265       3.039062      -5.171875    
+Timing for main: time 0001-01-01_03:39:20 on domain   1:    0.04328 elapsed seconds
+full max uvwrp          106.16190        0.00000       22.54044        1.19902    98630.63281
+full min uvwrp          -60.49353        0.00000      -22.16991       -0.00566      -13.97639
+ sum_vtj =   1.1403250E+13
+  tmass =   0.5748796    
+ tekip =     134531.5       113.6000       101680.1       32737.79    
+ changetekip =    -3.453125      -1.389885       2.960938      -5.037109    
+Timing for main: time 0001-01-01_03:39:22 on domain   1:    0.04230 elapsed seconds
+full max uvwrp          107.64190        0.00000       22.52369        1.19897    98638.69531
+full min uvwrp          -59.97250        0.00000      -22.16264       -0.00558      -13.32284
+ sum_vtj =   1.1403250E+13
+  tmass =   0.5748794    
+ tekip =     134531.3       113.6034       101680.0       32737.75    
+ changetekip =    -3.578125      -1.386543       2.882812      -5.082031    
+Timing for main: time 0001-01-01_03:39:24 on domain   1:    0.04223 elapsed seconds
+full max uvwrp          108.82951        0.00000       22.49230        1.19893    98646.44531
+full min uvwrp          -59.29261        0.00000      -22.22437       -0.00535      -12.58300
+ sum_vtj =   1.1403250E+13
+  tmass =   0.5748802    
+ tekip =     134531.3       113.6074       101680.0       32737.73    
+ changetekip =    -3.562500      -1.382530       2.914062      -5.103516    
+Timing for main: time 0001-01-01_03:39:26 on domain   1:    0.04337 elapsed seconds
+full max uvwrp          109.73006        0.00000       22.44702        1.19889    98653.89844
+full min uvwrp          -58.44685        0.00000      -22.33370       -0.00498      -13.02879
+ sum_vtj =   1.1403250E+13
+  tmass =   0.5748788    
+ tekip =     134531.2       113.6126       101679.9       32737.77    
+ changetekip =    -3.656250      -1.377342       2.773438      -5.064453    
+Timing for main: time 0001-01-01_03:39:28 on domain   1:    0.04293 elapsed seconds
+full max uvwrp          110.35148        0.00000       22.40347        1.19885    98661.02344
+full min uvwrp          -57.42844        0.00000      -22.40747       -0.00449      -13.43973
+ sum_vtj =   1.1403250E+13
+  tmass =   0.5748798    
+ tekip =     134531.3       113.6182       101679.9       32737.78    
+ changetekip =    -3.578125      -1.371658       2.835938      -5.054688    
+ u is too big so stop for max-u  =     110.3515    
+ u is too big so stop for min-u  =    -57.42844    
+ maxloc:           52          79           1
+ minloc:           54          62           1

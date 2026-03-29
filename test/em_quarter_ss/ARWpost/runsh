@@ -1,0 +1,4 @@
+source /public23/soft/modules/module.sh
+module load wrf/4.0
+./ARWpost.exe
+

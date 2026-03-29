@@ -1,0 +1,3 @@
+grep -in 'ing' xwrf1.log
+tail -20 xwrf1.log
+

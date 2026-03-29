@@ -1,0 +1,239 @@
+None of WRF_EM_CORE, WRF_NMM_CORE, 
+        specified in shell environment.... 
+copying Registry/Registry.EM to Registry/Registry
+ 
+============================================================================================== 
+ 
+V4.2
+ 
+Compiling: WRF_EM_CORE  
+ 
+Linux ln92.para.bscc 3.10.0-1160.90.1.el7.x86_64 #1 SMP Thu May 4 15:21:22 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux
+ 
+Intel(R) Fortran Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 17.0.5.239 Build 20170817
+Copyright (C) 1985-2017 Intel Corporation.  All rights reserved.
+
+ 
+============================================================================================== 
+ 
+setting parallel make -j 2
+ 
+============================================================================================== 
+ 
+The following indicate the compilers selected to build the WRF system
+ 
+Serial Fortran compiler (mostly for tool generation):
+which SFC
+/public23/soft/intel/2017/compilers_and_libraries_2017.5.239/linux/bin/intel64/ifort
+ 
+Serial C compiler (mostly for tool generation):
+which SCC
+/public23/soft/intel/2017/compilers_and_libraries_2017.5.239/linux/bin/intel64/icc
+ 
+Fortran compiler for the model source code:
+which FC
+/public23/soft/intel/2017/compilers_and_libraries_2017.5.239/linux/bin/intel64/ifort
+Will use 'time' to report timing information
+ 
+C compiler for the model source code:
+which CC
+/public23/soft/intel/2017/compilers_and_libraries_2017.5.239/linux/bin/intel64/icc
+ 
+============================================================================================== 
+ 
+make -i -r MODULE_DIRS="-I../dyn_em -I../dyn_nmm  -I/public23/home/sc61341/hsy/FM_baknc/external/esmf_time_f90  -I/public23/home/sc61341/hsy/FM_baknc/main -I/public23/home/sc61341/hsy/FM_baknc/external/io_netcdf -I/public23/home/sc61341/hsy/FM_baknc/external/io_int -I/public23/home/sc61341/hsy/FM_baknc/frame -I/public23/home/sc61341/hsy/FM_baknc/share -I/public23/home/sc61341/hsy/FM_baknc/phys -I/public23/home/sc61341/hsy/FM_baknc/wrftladj -I/public23/home/sc61341/hsy/FM_baknc/chem -I/public23/home/sc61341/hsy/FM_baknc/inc -I/public23/soft/netcdf/4.4.1-icc17/include " ext
+make[1]: Entering directory `/public23/home/sc61341/hsy/FM_baknc'
+--------------------------------------
+if [ 0 -eq 0 ] ; then \
+  ( cd frame ; make -i -r externals ) ; \
+else \
+  ( cd frame ; make -i -r PLUSFLAG="-DWRFPLUS=1" externals ) ; \
+fi
+make[2]: Entering directory `/public23/home/sc61341/hsy/FM_baknc/frame'
+( cd /public23/home/sc61341/hsy/FM_baknc/external/esmf_time_f90 ; \
+          make -j 2 FC="ifort -real-size `expr 8 \* 4` -i4  -ip -fp-model precise -w -ftz -align all -fno-alias -FR -convert big_endian  " RANLIB="ranlib" \
+          CPP="/lib/cpp -P -nostdinc -I/public23/home/sc61341/hsy/FM_baknc/inc -I. -DEM_CORE=1 -DNMM_CORE=0 -DNMM_MAX_DIM=2600 -DDA_CORE=0 -DWRFPLUS=0 -DIWORDSIZE=4 -DDWORDSIZE=8 -DRWORDSIZE=4 -DLWORDSIZE=4 -DNONSTANDARD_SYSTEM_FUNC  -DWRF_USE_CLM -DRPC_TYPES=1  -DNETCDF -DHDF5 -DLANDREAD_STUB=1 -DUSE_ALLOCATABLES -Dwrfmodel -DGRIB1 -DINTIO -DKEEP_INT_AROUND -DLIMIT_ARGS -DBUILD_RRTMG_FAST=0 -DBUILD_RRTMK=0 -DBUILD_SBM_FAST=1 -DSHOW_ALL_VARS_USED=0 -DCONFIG_BUF_LEN=65536 -DMAX_DOMAINS_F=21 -DMAX_HISTORY=25 -DNMM_NEST=0 -traditional-cpp" AR="ar" ARFLAGS="ru" )
+make[3]: Entering directory `/public23/home/sc61341/hsy/FM_baknc/external/esmf_time_f90'
+/bin/rm -f ESMF_Base.o
+sed -e "/\!.*'/s/'//g" ESMF_Base.F90 > ESMF_Base.b
+/bin/rm -f ESMF_Fraction.o
+sed -e "/\!.*'/s/'//g" ESMF_Fraction.F90 > ESMF_Fraction.b
+/lib/cpp -P -nostdinc -I/public23/home/sc61341/hsy/FM_baknc/inc -I. -DEM_CORE=1 -DNMM_CORE=0 -DNMM_MAX_DIM=2600 -DDA_CORE=0 -DWRFPLUS=0 -DIWORDSIZE=4 -DDWORDSIZE=8 -DRWORDSIZE=4 -DLWORDSIZE=4 -DNONSTANDARD_SYSTEM_FUNC  -DWRF_USE_CLM -DRPC_TYPES=1  -DNETCDF -DHDF5 -DLANDREAD_STUB=1 -DUSE_ALLOCATABLES -Dwrfmodel -DGRIB1 -DINTIO -DKEEP_INT_AROUND -DLIMIT_ARGS -DBUILD_RRTMG_FAST=0 -DBUILD_RRTMK=0 -DBUILD_SBM_FAST=1 -DSHOW_ALL_VARS_USED=0 -DCONFIG_BUF_LEN=65536 -DMAX_DOMAINS_F=21 -DMAX_HISTORY=25 -DNMM_NEST=0 -traditional-cpp -I. ESMF_Base.b > ESMF_Base.f
+/lib/cpp -P -nostdinc -I/public23/home/sc61341/hsy/FM_baknc/inc -I. -DEM_CORE=1 -DNMM_CORE=0 -DNMM_MAX_DIM=2600 -DDA_CORE=0 -DWRFPLUS=0 -DIWORDSIZE=4 -DDWORDSIZE=8 -DRWORDSIZE=4 -DLWORDSIZE=4 -DNONSTANDARD_SYSTEM_FUNC  -DWRF_USE_CLM -DRPC_TYPES=1  -DNETCDF -DHDF5 -DLANDREAD_STUB=1 -DUSE_ALLOCATABLES -Dwrfmodel -DGRIB1 -DINTIO -DKEEP_INT_AROUND -DLIMIT_ARGS -DBUILD_RRTMG_FAST=0 -DBUILD_RRTMK=0 -DBUILD_SBM_FAST=1 -DSHOW_ALL_VARS_USED=0 -DCONFIG_BUF_LEN=65536 -DMAX_DOMAINS_F=21 -DMAX_HISTORY=25 -DNMM_NEST=0 -traditional-cpp -I. ESMF_Fraction.b > ESMF_Fraction.f
+/bin/rm -f ESMF_Base.b
+/bin/rm -f ESMF_Fraction.b
+ifort -real-size 32 -i4  -ip -fp-model precise -w -ftz -align all -fno-alias -FR -convert big_endian   -o ESMF_Base.o -c ESMF_Base.f
+ifort -real-size 32 -i4  -ip -fp-model precise -w -ftz -align all -fno-alias -FR -convert big_endian   -o ESMF_Fraction.o -c ESMF_Fraction.f
+/bin/rm -f ESMF_BaseTime.o
+sed -e "/\!.*'/s/'//g" ESMF_BaseTime.F90 > ESMF_BaseTime.b
+/lib/cpp -P -nostdinc -I/public23/home/sc61341/hsy/FM_baknc/inc -I. -DEM_CORE=1 -DNMM_CORE=0 -DNMM_MAX_DIM=2600 -DDA_CORE=0 -DWRFPLUS=0 -DIWORDSIZE=4 -DDWORDSIZE=8 -DRWORDSIZE=4 -DLWORDSIZE=4 -DNONSTANDARD_SYSTEM_FUNC  -DWRF_USE_CLM -DRPC_TYPES=1  -DNETCDF -DHDF5 -DLANDREAD_STUB=1 -DUSE_ALLOCATABLES -Dwrfmodel -DGRIB1 -DINTIO -DKEEP_INT_AROUND -DLIMIT_ARGS -DBUILD_RRTMG_FAST=0 -DBUILD_RRTMK=0 -DBUILD_SBM_FAST=1 -DSHOW_ALL_VARS_USED=0 -DCONFIG_BUF_LEN=65536 -DMAX_DOMAINS_F=21 -DMAX_HISTORY=25 -DNMM_NEST=0 -traditional-cpp -I. ESMF_BaseTime.b > ESMF_BaseTime.f
+/bin/rm -f ESMF_BaseTime.b
+ifort -real-size 32 -i4  -ip -fp-model precise -w -ftz -align all -fno-alias -FR -convert big_endian   -o ESMF_BaseTime.o -c ESMF_BaseTime.f
+/bin/rm -f ESMF_Calendar.o
+sed -e "/\!.*'/s/'//g" ESMF_Calendar.F90 > ESMF_Calendar.b
+/lib/cpp -P -nostdinc -I/public23/home/sc61341/hsy/FM_baknc/inc -I. -DEM_CORE=1 -DNMM_CORE=0 -DNMM_MAX_DIM=2600 -DDA_CORE=0 -DWRFPLUS=0 -DIWORDSIZE=4 -DDWORDSIZE=8 -DRWORDSIZE=4 -DLWORDSIZE=4 -DNONSTANDARD_SYSTEM_FUNC  -DWRF_USE_CLM -DRPC_TYPES=1  -DNETCDF -DHDF5 -DLANDREAD_STUB=1 -DUSE_ALLOCATABLES -Dwrfmodel -DGRIB1 -DINTIO -DKEEP_INT_AROUND -DLIMIT_ARGS -DBUILD_RRTMG_FAST=0 -DBUILD_RRTMK=0 -DBUILD_SBM_FAST=1 -DSHOW_ALL_VARS_USED=0 -DCONFIG_BUF_LEN=65536 -DMAX_DOMAINS_F=21 -DMAX_HISTORY=25 -DNMM_NEST=0 -traditional-cpp -I. ESMF_Calendar.b > ESMF_Calendar.f
+/bin/rm -f ESMF_Calendar.b
+ifort -real-size 32 -i4  -ip -fp-model precise -w -ftz -align all -fno-alias -FR -convert big_endian   -o ESMF_Calendar.o -c ESMF_Calendar.f
+/bin/rm -f ESMF_TimeInterval.o
+/bin/rm -f ESMF_Stubs.o
+sed -e "/\!.*'/s/'//g" ESMF_Stubs.F90 > ESMF_Stubs.b
+sed -e "/\!.*'/s/'//g" ESMF_TimeInterval.F90 > ESMF_TimeInterval.b
+/lib/cpp -P -nostdinc -I/public23/home/sc61341/hsy/FM_baknc/inc -I. -DEM_CORE=1 -DNMM_CORE=0 -DNMM_MAX_DIM=2600 -DDA_CORE=0 -DWRFPLUS=0 -DIWORDSIZE=4 -DDWORDSIZE=8 -DRWORDSIZE=4 -DLWORDSIZE=4 -DNONSTANDARD_SYSTEM_FUNC  -DWRF_USE_CLM -DRPC_TYPES=1  -DNETCDF -DHDF5 -DLANDREAD_STUB=1 -DUSE_ALLOCATABLES -Dwrfmodel -DGRIB1 -DINTIO -DKEEP_INT_AROUND -DLIMIT_ARGS -DBUILD_RRTMG_FAST=0 -DBUILD_RRTMK=0 -DBUILD_SBM_FAST=1 -DSHOW_ALL_VARS_USED=0 -DCONFIG_BUF_LEN=65536 -DMAX_DOMAINS_F=21 -DMAX_HISTORY=25 -DNMM_NEST=0 -traditional-cpp -I. ESMF_TimeInterval.b > ESMF_TimeInterval.f
+/lib/cpp -P -nostdinc -I/public23/home/sc61341/hsy/FM_baknc/inc -I. -DEM_CORE=1 -DNMM_CORE=0 -DNMM_MAX_DIM=2600 -DDA_CORE=0 -DWRFPLUS=0 -DIWORDSIZE=4 -DDWORDSIZE=8 -DRWORDSIZE=4 -DLWORDSIZE=4 -DNONSTANDARD_SYSTEM_FUNC  -DWRF_USE_CLM -DRPC_TYPES=1  -DNETCDF -DHDF5 -DLANDREAD_STUB=1 -DUSE_ALLOCATABLES -Dwrfmodel -DGRIB1 -DINTIO -DKEEP_INT_AROUND -DLIMIT_ARGS -DBUILD_RRTMG_FAST=0 -DBUILD_RRTMK=0 -DBUILD_SBM_FAST=1 -DSHOW_ALL_VARS_USED=0 -DCONFIG_BUF_LEN=65536 -DMAX_DOMAINS_F=21 -DMAX_HISTORY=25 -DNMM_NEST=0 -traditional-cpp -I. ESMF_Stubs.b > ESMF_Stubs.f
+/bin/rm -f ESMF_TimeInterval.b
+/bin/rm -f ESMF_Stubs.b
+ifort -real-size 32 -i4  -ip -fp-model precise -w -ftz -align all -fno-alias -FR -convert big_endian   -o ESMF_TimeInterval.o -c ESMF_TimeInterval.f
+ifort -real-size 32 -i4  -ip -fp-model precise -w -ftz -align all -fno-alias -FR -convert big_endian   -o ESMF_Stubs.o -c ESMF_Stubs.f
+/bin/rm -f ESMF_Time.o
+sed -e "/\!.*'/s/'//g" ESMF_Time.F90 > ESMF_Time.b
+/lib/cpp -P -nostdinc -I/public23/home/sc61341/hsy/FM_baknc/inc -I. -DEM_CORE=1 -DNMM_CORE=0 -DNMM_MAX_DIM=2600 -DDA_CORE=0 -DWRFPLUS=0 -DIWORDSIZE=4 -DDWORDSIZE=8 -DRWORDSIZE=4 -DLWORDSIZE=4 -DNONSTANDARD_SYSTEM_FUNC  -DWRF_USE_CLM -DRPC_TYPES=1  -DNETCDF -DHDF5 -DLANDREAD_STUB=1 -DUSE_ALLOCATABLES -Dwrfmodel -DGRIB1 -DINTIO -DKEEP_INT_AROUND -DLIMIT_ARGS -DBUILD_RRTMG_FAST=0 -DBUILD_RRTMK=0 -DBUILD_SBM_FAST=1 -DSHOW_ALL_VARS_USED=0 -DCONFIG_BUF_LEN=65536 -DMAX_DOMAINS_F=21 -DMAX_HISTORY=25 -DNMM_NEST=0 -traditional-cpp -I. ESMF_Time.b > ESMF_Time.f
+/bin/rm -f ESMF_Time.b
+ifort -real-size 32 -i4  -ip -fp-model precise -w -ftz -align all -fno-alias -FR -convert big_endian   -o ESMF_Time.o -c ESMF_Time.f
+/bin/rm -f ESMF_Alarm.o
+sed -e "/\!.*'/s/'//g" ESMF_Alarm.F90 > ESMF_Alarm.b
+/lib/cpp -P -nostdinc -I/public23/home/sc61341/hsy/FM_baknc/inc -I. -DEM_CORE=1 -DNMM_CORE=0 -DNMM_MAX_DIM=2600 -DDA_CORE=0 -DWRFPLUS=0 -DIWORDSIZE=4 -DDWORDSIZE=8 -DRWORDSIZE=4 -DLWORDSIZE=4 -DNONSTANDARD_SYSTEM_FUNC  -DWRF_USE_CLM -DRPC_TYPES=1  -DNETCDF -DHDF5 -DLANDREAD_STUB=1 -DUSE_ALLOCATABLES -Dwrfmodel -DGRIB1 -DINTIO -DKEEP_INT_AROUND -DLIMIT_ARGS -DBUILD_RRTMG_FAST=0 -DBUILD_RRTMK=0 -DBUILD_SBM_FAST=1 -DSHOW_ALL_VARS_USED=0 -DCONFIG_BUF_LEN=65536 -DMAX_DOMAINS_F=21 -DMAX_HISTORY=25 -DNMM_NEST=0 -traditional-cpp -I. ESMF_Alarm.b > ESMF_Alarm.f
+/bin/rm -f ESMF_Alarm.b
+ifort -real-size 32 -i4  -ip -fp-model precise -w -ftz -align all -fno-alias -FR -convert big_endian   -o ESMF_Alarm.o -c ESMF_Alarm.f
+/bin/rm -f ESMF_Clock.o
+sed -e "/\!.*'/s/'//g" ESMF_Clock.F90 > ESMF_Clock.b
+/lib/cpp -P -nostdinc -I/public23/home/sc61341/hsy/FM_baknc/inc -I. -DEM_CORE=1 -DNMM_CORE=0 -DNMM_MAX_DIM=2600 -DDA_CORE=0 -DWRFPLUS=0 -DIWORDSIZE=4 -DDWORDSIZE=8 -DRWORDSIZE=4 -DLWORDSIZE=4 -DNONSTANDARD_SYSTEM_FUNC  -DWRF_USE_CLM -DRPC_TYPES=1  -DNETCDF -DHDF5 -DLANDREAD_STUB=1 -DUSE_ALLOCATABLES -Dwrfmodel -DGRIB1 -DINTIO -DKEEP_INT_AROUND -DLIMIT_ARGS -DBUILD_RRTMG_FAST=0 -DBUILD_RRTMK=0 -DBUILD_SBM_FAST=1 -DSHOW_ALL_VARS_USED=0 -DCONFIG_BUF_LEN=65536 -DMAX_DOMAINS_F=21 -DMAX_HISTORY=25 -DNMM_NEST=0 -traditional-cpp -I. ESMF_Clock.b > ESMF_Clock.f
+/bin/rm -f ESMF_Clock.b
+ifort -real-size 32 -i4  -ip -fp-model precise -w -ftz -align all -fno-alias -FR -convert big_endian   -o ESMF_Clock.o -c ESMF_Clock.f
+/bin/rm -f Meat.o
+/bin/rm -f ESMF_AlarmClock.o
+sed -e "/\!.*'/s/'//g" Meat.F90 > Meat.b
+sed -e "/\!.*'/s/'//g" ESMF_AlarmClock.F90 > ESMF_AlarmClock.b
+/lib/cpp -P -nostdinc -I/public23/home/sc61341/hsy/FM_baknc/inc -I. -DEM_CORE=1 -DNMM_CORE=0 -DNMM_MAX_DIM=2600 -DDA_CORE=0 -DWRFPLUS=0 -DIWORDSIZE=4 -DDWORDSIZE=8 -DRWORDSIZE=4 -DLWORDSIZE=4 -DNONSTANDARD_SYSTEM_FUNC  -DWRF_USE_CLM -DRPC_TYPES=1  -DNETCDF -DHDF5 -DLANDREAD_STUB=1 -DUSE_ALLOCATABLES -Dwrfmodel -DGRIB1 -DINTIO -DKEEP_INT_AROUND -DLIMIT_ARGS -DBUILD_RRTMG_FAST=0 -DBUILD_RRTMK=0 -DBUILD_SBM_FAST=1 -DSHOW_ALL_VARS_USED=0 -DCONFIG_BUF_LEN=65536 -DMAX_DOMAINS_F=21 -DMAX_HISTORY=25 -DNMM_NEST=0 -traditional-cpp -I. Meat.b > Meat.f
+/bin/rm -f Meat.b
+/lib/cpp -P -nostdinc -I/public23/home/sc61341/hsy/FM_baknc/inc -I. -DEM_CORE=1 -DNMM_CORE=0 -DNMM_MAX_DIM=2600 -DDA_CORE=0 -DWRFPLUS=0 -DIWORDSIZE=4 -DDWORDSIZE=8 -DRWORDSIZE=4 -DLWORDSIZE=4 -DNONSTANDARD_SYSTEM_FUNC  -DWRF_USE_CLM -DRPC_TYPES=1  -DNETCDF -DHDF5 -DLANDREAD_STUB=1 -DUSE_ALLOCATABLES -Dwrfmodel -DGRIB1 -DINTIO -DKEEP_INT_AROUND -DLIMIT_ARGS -DBUILD_RRTMG_FAST=0 -DBUILD_RRTMK=0 -DBUILD_SBM_FAST=1 -DSHOW_ALL_VARS_USED=0 -DCONFIG_BUF_LEN=65536 -DMAX_DOMAINS_F=21 -DMAX_HISTORY=25 -DNMM_NEST=0 -traditional-cpp -I. ESMF_AlarmClock.b > ESMF_AlarmClock.f
+ifort -real-size 32 -i4  -ip -fp-model precise -w -ftz -align all -fno-alias -FR -convert big_endian   -o Meat.o -c Meat.f
+/bin/rm -f ESMF_AlarmClock.b
+ifort -real-size 32 -i4  -ip -fp-model precise -w -ftz -align all -fno-alias -FR -convert big_endian   -o ESMF_AlarmClock.o -c ESMF_AlarmClock.f
+/bin/rm -f ESMF_Mod.o
+sed -e "/\!.*'/s/'//g" ESMF_Mod.F90 > ESMF_Mod.b
+/lib/cpp -P -nostdinc -I/public23/home/sc61341/hsy/FM_baknc/inc -I. -DEM_CORE=1 -DNMM_CORE=0 -DNMM_MAX_DIM=2600 -DDA_CORE=0 -DWRFPLUS=0 -DIWORDSIZE=4 -DDWORDSIZE=8 -DRWORDSIZE=4 -DLWORDSIZE=4 -DNONSTANDARD_SYSTEM_FUNC  -DWRF_USE_CLM -DRPC_TYPES=1  -DNETCDF -DHDF5 -DLANDREAD_STUB=1 -DUSE_ALLOCATABLES -Dwrfmodel -DGRIB1 -DINTIO -DKEEP_INT_AROUND -DLIMIT_ARGS -DBUILD_RRTMG_FAST=0 -DBUILD_RRTMK=0 -DBUILD_SBM_FAST=1 -DSHOW_ALL_VARS_USED=0 -DCONFIG_BUF_LEN=65536 -DMAX_DOMAINS_F=21 -DMAX_HISTORY=25 -DNMM_NEST=0 -traditional-cpp -I. ESMF_Mod.b > ESMF_Mod.f
+/bin/rm -f ESMF_Mod.b
+ifort -real-size 32 -i4  -ip -fp-model precise -w -ftz -align all -fno-alias -FR -convert big_endian   -o ESMF_Mod.o -c ESMF_Mod.f
+/bin/rm -f module_symbols_util.o
+sed -e "/\!.*'/s/'//g" module_symbols_util.F90 > module_symbols_util.b
+/lib/cpp -P -nostdinc -I/public23/home/sc61341/hsy/FM_baknc/inc -I. -DEM_CORE=1 -DNMM_CORE=0 -DNMM_MAX_DIM=2600 -DDA_CORE=0 -DWRFPLUS=0 -DIWORDSIZE=4 -DDWORDSIZE=8 -DRWORDSIZE=4 -DLWORDSIZE=4 -DNONSTANDARD_SYSTEM_FUNC  -DWRF_USE_CLM -DRPC_TYPES=1  -DNETCDF -DHDF5 -DLANDREAD_STUB=1 -DUSE_ALLOCATABLES -Dwrfmodel -DGRIB1 -DINTIO -DKEEP_INT_AROUND -DLIMIT_ARGS -DBUILD_RRTMG_FAST=0 -DBUILD_RRTMK=0 -DBUILD_SBM_FAST=1 -DSHOW_ALL_VARS_USED=0 -DCONFIG_BUF_LEN=65536 -DMAX_DOMAINS_F=21 -DMAX_HISTORY=25 -DNMM_NEST=0 -traditional-cpp -I. module_symbols_util.b > module_symbols_util.f
+/bin/rm -f module_symbols_util.b
+ifort -real-size 32 -i4  -ip -fp-model precise -w -ftz -align all -fno-alias -FR -convert big_endian   -o module_symbols_util.o -c module_symbols_util.f
+/bin/rm -f module_utility.o
+sed -e "/\!.*'/s/'//g" module_utility.F90 > module_utility.b
+/lib/cpp -P -nostdinc -I/public23/home/sc61341/hsy/FM_baknc/inc -I. -DEM_CORE=1 -DNMM_CORE=0 -DNMM_MAX_DIM=2600 -DDA_CORE=0 -DWRFPLUS=0 -DIWORDSIZE=4 -DDWORDSIZE=8 -DRWORDSIZE=4 -DLWORDSIZE=4 -DNONSTANDARD_SYSTEM_FUNC  -DWRF_USE_CLM -DRPC_TYPES=1  -DNETCDF -DHDF5 -DLANDREAD_STUB=1 -DUSE_ALLOCATABLES -Dwrfmodel -DGRIB1 -DINTIO -DKEEP_INT_AROUND -DLIMIT_ARGS -DBUILD_RRTMG_FAST=0 -DBUILD_RRTMK=0 -DBUILD_SBM_FAST=1 -DSHOW_ALL_VARS_USED=0 -DCONFIG_BUF_LEN=65536 -DMAX_DOMAINS_F=21 -DMAX_HISTORY=25 -DNMM_NEST=0 -traditional-cpp -I. module_utility.b > module_utility.f
+/bin/rm -f module_utility.b
+ifort -real-size 32 -i4  -ip -fp-model precise -w -ftz -align all -fno-alias -FR -convert big_endian   -o module_utility.o -c module_utility.f
+/bin/rm -f libesmf_time.a
+if [ "ar" != "lib.exe" ] ; then \
+          ar ru libesmf_time.a ESMF_Alarm.o ESMF_BaseTime.o ESMF_Clock.o ESMF_Time.o Meat.o ESMF_Base.o ESMF_Calendar.o ESMF_Fraction.o ESMF_TimeInterval.o ESMF_Stubs.o ESMF_Mod.o module_symbols_util.o module_utility.o ESMF_AlarmClock.o ; \
+        else \
+          ar /out:libesmf_time.a ESMF_Alarm.o ESMF_BaseTime.o ESMF_Clock.o ESMF_Time.o Meat.o ESMF_Base.o ESMF_Calendar.o ESMF_Fraction.o ESMF_TimeInterval.o ESMF_Stubs.o ESMF_Mod.o module_symbols_util.o module_utility.o ESMF_AlarmClock.o ; \
+        fi
+ar: creating libesmf_time.a
+ranlib libesmf_time.a
+make[3]: Leaving directory `/public23/home/sc61341/hsy/FM_baknc/external/esmf_time_f90'
+( cd /public23/home/sc61341/hsy/FM_baknc/external/io_netcdf ; \
+          make -j 2 NETCDFPATH="/public23/soft/netcdf/4.4.1-icc17" RANLIB="ranlib" CPP="/lib/cpp -P -nostdinc" \
+          CC="icc" CFLAGS="-w -O3 -ip  -DLANDREAD_STUB=1 -DMAX_HISTORY=25 -DNMM_CORE=0" \
+          FC="ifort -real-size `expr 8 \* 4` -i4  -O3 -ip -fp-model precise -w -ftz -align all -fno-alias -FR -convert big_endian  " TRADFLAG="-traditional-cpp" AR="ar" ARFLAGS="ru" )
+make[3]: Entering directory `/public23/home/sc61341/hsy/FM_baknc/external/io_netcdf'
+grep nf_format_64bit /public23/soft/netcdf/4.4.1-icc17/include/netcdf.inc ;\
+                        a=$? ; export a ; \
+		if [ $a -a "$WRFIO_NCD_LARGE_FILE_SUPPORT" = "1" ] ; then \
+                          /lib/cpp -P -nostdinc -P -traditional-cpp -DWRFIO_NCD_LARGE_FILE_SUPPORT -I../ioapi_share wrf_io.F90 | m4 -Uinclude -Uindex -Ulen - > wrf_io.f ; \
+                        else \
+                          /lib/cpp -P -nostdinc -P -traditional-cpp -I../ioapi_share wrf_io.F90 | m4 -Uinclude -Uindex -Ulen - > wrf_io.f ; \
+                        fi
+/lib/cpp -P -nostdinc -P -traditional-cpp -I../ioapi_share module_wrfsi_static.F90 > module_wrfsi_static.f
+      integer nf_format_64bit
+      parameter (nf_format_64bit = 2)
+ifort -real-size 32 -i4  -O3 -ip -fp-model precise -w -ftz -align all -fno-alias -FR -convert big_endian   -o module_wrfsi_static.o  -I/public23/soft/netcdf/4.4.1-icc17/include -I../ioapi_share -c module_wrfsi_static.f
+ifort -real-size 32 -i4  -O3 -ip -fp-model precise -w -ftz -align all -fno-alias -FR -convert big_endian   -o wrf_io.o  -I/public23/soft/netcdf/4.4.1-icc17/include -I../ioapi_share -c wrf_io.f
+/lib/cpp -P -nostdinc -P -traditional-cpp -I../ioapi_share field_routines.F90 > field_routines.f
+ifort -real-size 32 -i4  -O3 -ip -fp-model precise -w -ftz -align all -fno-alias -FR -convert big_endian   -o field_routines.o  -I/public23/soft/netcdf/4.4.1-icc17/include -I../ioapi_share -c field_routines.f
+/bin/rm -f libwrfio_nf.a
+if [ "ar" != "lib.exe" ] ; then \
+                          ar cr libwrfio_nf.a wrf_io.o field_routines.o module_wrfsi_static.o ; \
+                        else \
+                          ar /out:libwrfio_nf.a wrf_io.o field_routines.o module_wrfsi_static.o ; \
+                        fi
+ranlib libwrfio_nf.a
+make[3]: Leaving directory `/public23/home/sc61341/hsy/FM_baknc/external/io_netcdf'
+( cd /public23/home/sc61341/hsy/FM_baknc/external/ioapi_share ; \
+          make -i -r NATIVE_RWORDSIZE="4" RWORDSIZE="4" AR="ar" ARFLAGS="ru" )
+make[3]: Entering directory `/public23/home/sc61341/hsy/FM_baknc/external/ioapi_share'
+( /bin/rm -f ../../inc/wrf_io_flags.h foo_io_flags.h; \
+/bin/cp wrf_io_flags.h foo_io_flags.h; \
+if [ 4 -ne 4 ] ; then \
+  /bin/rm -f foo_io_flags.h; \
+  sed -e 's/104/105/' wrf_io_flags.h > foo_io_flags.h ;\
+fi ; \
+/bin/mv foo_io_flags.h ../../inc/wrf_io_flags.h )
+/bin/rm -f ../../inc/wrf_status_codes.h
+/bin/cp wrf_status_codes.h ../../inc
+make[3]: Leaving directory `/public23/home/sc61341/hsy/FM_baknc/external/ioapi_share'
+( cd /public23/home/sc61341/hsy/FM_baknc/external/io_grib_share ; \
+          make -j 2 CC="icc" CFLAGS="-w -O3 -ip  -DLANDREAD_STUB=1 -DMAX_HISTORY=25 -DNMM_CORE=0" RM="rm -f" RANLIB="ranlib" CPP="/lib/cpp -P -nostdinc" \
+          FC="ifort -real-size `expr 8 \* 4` -i4 -I.  -ip -fp-model precise -w -ftz -align all -fno-alias -FR -convert big_endian   " TRADFLAG="-traditional-cpp" AR="ar" ARFLAGS="ru" archive) 
+make[3]: Entering directory `/public23/home/sc61341/hsy/FM_baknc/external/io_grib_share'
+make[4]: Entering directory `/public23/home/sc61341/hsy/FM_baknc/external/io_grib_share'
+rm -f io_grib_share.o
+icc  -I. -w -O3 -ip  -DLANDREAD_STUB=1 -DMAX_HISTORY=25 -DNMM_CORE=0   -c get_region_center.c
+/lib/cpp -P -nostdinc  -traditional-cpp  -I. io_grib_share.F > io_grib_share.f90
+ifort -real-size 32 -i4 -I.  -ip -fp-model precise -w -ftz -align all -fno-alias -FR -convert big_endian      -I.     -c io_grib_share.f90
+icc  -I. -w -O3 -ip  -DLANDREAD_STUB=1 -DMAX_HISTORY=25 -DNMM_CORE=0   -c gridnav.c
+icc  -I. -w -O3 -ip  -DLANDREAD_STUB=1 -DMAX_HISTORY=25 -DNMM_CORE=0   -c open_file.c
+ar ru ./libio_grib_share.a io_grib_share.o get_region_center.o gridnav.o open_file.o
+ar: creating ./libio_grib_share.a
+ranlib ./libio_grib_share.a
+make[4]: Leaving directory `/public23/home/sc61341/hsy/FM_baknc/external/io_grib_share'
+make[3]: Leaving directory `/public23/home/sc61341/hsy/FM_baknc/external/io_grib_share'
+( cd /public23/home/sc61341/hsy/FM_baknc/external/io_grib1 ; \
+          make -j 2 CC="icc" CFLAGS="-w -O3 -ip  -DLANDREAD_STUB=1 -DMAX_HISTORY=25 -DNMM_CORE=0" RM="rm -f" RANLIB="ranlib" CPP="/lib/cpp -P -nostdinc" \
+          FC="ifort -real-size `expr 8 \* 4` -i4 -I.  -ip -fp-model precise -w -ftz -align all -fno-alias -FR -convert big_endian   " TRADFLAG="-traditional-cpp" AR="ar" ARFLAGS="ru" archive)
+make[3]: Entering directory `/public23/home/sc61341/hsy/FM_baknc/external/io_grib1'
+        Doing make archive on library subdirectory MEL_grib1
+make[4]: Entering directory `/public23/home/sc61341/hsy/FM_baknc/external/io_grib1/MEL_grib1'
+make[5]: Entering directory `/public23/home/sc61341/hsy/FM_baknc/external/io_grib1/MEL_grib1'
+icc  -I. -w -O3 -ip  -DLANDREAD_STUB=1 -DMAX_HISTORY=25 -DNMM_CORE=0   -c FTP_getfile.c
+icc  -I. -w -O3 -ip  -DLANDREAD_STUB=1 -DMAX_HISTORY=25 -DNMM_CORE=0   -c apply_bitmap.c
+icc  -I. -w -O3 -ip  -DLANDREAD_STUB=1 -DMAX_HISTORY=25 -DNMM_CORE=0   -c display_gribhdr.c
+icc  -I. -w -O3 -ip  -DLANDREAD_STUB=1 -DMAX_HISTORY=25 -DNMM_CORE=0   -c gbyte.c
+icc  -I. -w -O3 -ip  -DLANDREAD_STUB=1 -DMAX_HISTORY=25 -DNMM_CORE=0   -c grib_dec.c
+icc  -I. -w -O3 -ip  -DLANDREAD_STUB=1 -DMAX_HISTORY=25 -DNMM_CORE=0   -c grib_enc.c
+icc  -I. -w -O3 -ip  -DLANDREAD_STUB=1 -DMAX_HISTORY=25 -DNMM_CORE=0   -c grib_seek.c
+icc  -I. -w -O3 -ip  -DLANDREAD_STUB=1 -DMAX_HISTORY=25 -DNMM_CORE=0   -c gribgetbds.c
+icc  -I. -w -O3 -ip  -DLANDREAD_STUB=1 -DMAX_HISTORY=25 -DNMM_CORE=0   -c gribgetbms.c
+icc  -I. -w -O3 -ip  -DLANDREAD_STUB=1 -DMAX_HISTORY=25 -DNMM_CORE=0   -c gribgetgds.c
+icc  -I. -w -O3 -ip  -DLANDREAD_STUB=1 -DMAX_HISTORY=25 -DNMM_CORE=0   -c gribgetpds.c
+icc  -I. -w -O3 -ip  -DLANDREAD_STUB=1 -DMAX_HISTORY=25 -DNMM_CORE=0   -c gribhdr2file.c
+icc  -I. -w -O3 -ip  -DLANDREAD_STUB=1 -DMAX_HISTORY=25 -DNMM_CORE=0   -c gribputbds.c
+icc  -I. -w -O3 -ip  -DLANDREAD_STUB=1 -DMAX_HISTORY=25 -DNMM_CORE=0   -c gribputgds.c
+icc  -I. -w -O3 -ip  -DLANDREAD_STUB=1 -DMAX_HISTORY=25 -DNMM_CORE=0   -c gribputpds.c
+icc  -I. -w -O3 -ip  -DLANDREAD_STUB=1 -DMAX_HISTORY=25 -DNMM_CORE=0   -c hdr_print.c
+icc  -I. -w -O3 -ip  -DLANDREAD_STUB=1 -DMAX_HISTORY=25 -DNMM_CORE=0   -c init_dec_struct.c
+icc  -I. -w -O3 -ip  -DLANDREAD_STUB=1 -DMAX_HISTORY=25 -DNMM_CORE=0   -c init_enc_struct.c
+icc  -I. -w -O3 -ip  -DLANDREAD_STUB=1 -DMAX_HISTORY=25 -DNMM_CORE=0   -c init_gribhdr.c
+icc  -I. -w -O3 -ip  -DLANDREAD_STUB=1 -DMAX_HISTORY=25 -DNMM_CORE=0   -c init_struct.c
+icc  -I. -w -O3 -ip  -DLANDREAD_STUB=1 -DMAX_HISTORY=25 -DNMM_CORE=0   -c ld_dec_lookup.c
+icc  -I. -w -O3 -ip  -DLANDREAD_STUB=1 -DMAX_HISTORY=25 -DNMM_CORE=0   -c ld_enc_input.c
+icc  -I. -w -O3 -ip  -DLANDREAD_STUB=1 -DMAX_HISTORY=25 -DNMM_CORE=0   -c ld_enc_lookup.c
+icc  -I. -w -O3 -ip  -DLANDREAD_STUB=1 -DMAX_HISTORY=25 -DNMM_CORE=0   -c ld_grib_origctrs.c
+icc  -I. -w -O3 -ip  -DLANDREAD_STUB=1 -DMAX_HISTORY=25 -DNMM_CORE=0   -c make_default_grbfn.c
+icc  -I. -w -O3 -ip  -DLANDREAD_STUB=1 -DMAX_HISTORY=25 -DNMM_CORE=0   -c make_grib_log.c
+icc  -I. -w -O3 -ip  -DLANDREAD_STUB=1 -DMAX_HISTORY=25 -DNMM_CORE=0   -c map_lvl.c
+icc  -I. -w -O3 -ip  -DLANDREAD_STUB=1 -DMAX_HISTORY=25 -DNMM_CORE=0   -c map_parm.c
+icc  -I. -w -O3 -ip  -DLANDREAD_STUB=1 -DMAX_HISTORY=25 -DNMM_CORE=0   -c pack_spatial.c
+icc  -I. -w -O3 -ip  -DLANDREAD_STUB=1 -DMAX_HISTORY=25 -DNMM_CORE=0   -c prt_inp_struct.c
+make[3]: make[4]: *** [archive] Hangup*** [archive] Hangup
+
+make[5]: *** [prt_inp_struct.o] Hangup
+make[1]: *** [ext] Hangup
+make[2]: *** wait: No child processes.  Stop.
+make[2]: *** Waiting for unfinished jobs....
+make[2]: *** wait: No child processes.  Stop.
+make[5]: *** [pack_spatial.o] Hangup
+make: *** wait: No child processes.  Stop.
+make: *** Waiting for unfinished jobs....
+make: *** wait: No child processes.  Stop.

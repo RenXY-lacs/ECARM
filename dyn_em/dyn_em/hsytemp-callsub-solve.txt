@@ -1,0 +1,159 @@
+! It is a mediation-layer routine -> DM and SM calls are made where 
+   CALL get_ijk_from_grid (  grid ,                   &
+   CALL get_ijk_from_subgrid (  grid ,                   &
+   CALL set_tiles ( ZONE_SOLVE_EM, grid , ids , ide , jds , jde , ips , ipe , jps , jpe )
+!   CALL set_tiles (  grid , ids , ide , jds , jde , ips , ipe , jps , jpe )
+!   In this call, we do the time-step adaptation and set time-dependent lateral
+      CALL adapt_timestep(grid, config_flags)
+   IF( coupler_on ) CALL cpl_store_input( grid, config_flags )
+! see matching halo calls below for stencils
+     CALL wrf_debug ( 200 , ' call HALO_RK_CHEM' )
+       CALL wrf_error_fatal(TRIM(wrf_err_message))
+! see matching halo calls below for stencils
+     CALL wrf_debug ( 200 , ' call HALO_RK_tracer' )
+       CALL wrf_error_fatal(TRIM(wrf_err_message))
+     CALL wrf_debug ( 50 , wrf_err_message )
+     CALL get_wrf_debug_level( debug_level )
+       CALL wrf_dm_maxval(grid%max_vert_cfl, idex, jdex)
+       CALL wrf_debug ( 0 , wrf_err_message )
+       CALL zero_bdytend (grid%u_btxs,grid%u_btxe,grid%u_btys,grid%u_btye,     &
+       CALL initialize_moist_old ( moist_old(:,:,:,P_Qv),              &
+       CALL set_physical_bc3d( moist_old(ims,kms,jms,im), 'p', config_flags,  &
+       CALL wrf_error_fatal( wrf_err_message )
+       CALL wrf_error_fatal( wrf_err_message )
+     CALL wrf_debug ( 200 , ' call rk_step_prep ' )
+      ! CALL rk_step_prep_fm( config_flags, grid%alt, grid%al, grid%alb,    &
+	 CALL calc_p_rho_fm( grid%al, grid%p, grid%pfm_2,grid%pfm_base,                 &
+       CALL wrf_debug ( 200 , ' call rk_phys_bc_dry_1' )
+       CALL rk_phys_bc_dry_1_fm( config_flags, grid%u_2, grid%v_2, grid%w_2, grid%ww,      & 
+       CALL set_physical_bc3d( grid%al, 'p', config_flags,            &
+       CALL set_physical_bc3d( grid%rhofm_2, 'p', config_flags,            &
+       CALL set_physical_bc3d( grid%pfm_2, 'p', config_flags,            &
+    !   CALL set_physical_bc3d( grid%ph_2, 'w', config_flags,            &
+!(2) The non-timesplit physics begins with a call to "phy_prep"
+!    calls to the physics drivers:
+       IF (coupler_on) CALL cpl_settime( curr_secs2 )
+       CALL first_rk_step_part1 (    grid, config_flags         &
+	   	!!!!write(6,*) 'after CALL first_rk_step_part1,  rhofm_tend(i_end/2,ktf/2,1)',   rhofm_tendf(grid%i_end(ij)/2,kde/2,2)							
+       CALL first_rk_step_part2 (    grid, config_flags         &
+	   	!!!!write(6,*) 'after CALL first_rk_step_part2,  rhofmf_tend(i_end/2,ktf/2,1)',   rhofm_tendf(grid%i_end(ij)/2,kde/2,2)
+       CALL wrf_debug ( 200 , ' call rk_tendency' )
+	   CALL rk_tendency ( config_flags, rk_step                                                                &
+         CALL relax_bdy_dry ( config_flags,                                &
+	  !  CALL rk_addtend_dry 
+	  		!!!!write(6,*) 'before CALL rk_addtend_dry_fm,  rhofm_tend(i_end/2,ktf/2,1)',   rhofm_tend(grid%i_end(ij)/2,kde/2,2)	
+		  		!!!!write(6,*) 'before CALL rk_addtend_dry_fm,  rhofm_tendf(i_end/2,ktf/2,1)',   rhofm_tendf(grid%i_end(ij)/2,kde/2,2)		
+       CALL rk_addtend_dry_fm( grid%u_tend,  grid%v_tend,  w_tend,  pfm_tend,  rhofm_tend,  &
+		!!!!write(6,*) 'after CALL rk_addtend_dry_fm,  rhofm_tend(i_end/2,ktf/2,1)',   rhofm_tend(grid%i_end(ij)/2,kde/2,2)		 			
+         CALL spec_bdy_dry ( config_flags,                                    &
+			   	!!!!write(6,*) 'after CALL spec_bdy_dry,  rhofm_tend(i_end/2,ktf/2,1)',   rhofm_tend(grid%i_end(ij)/2,kde/2,2)						 
+! KRS 9/12/2012: Inserted new IF block calls to spec_bdy_dry_perturb. If peturb_bdy=1, SKEBS 
+         CALL spec_bdy_dry_perturb ( config_flags,                                 &
+         CALL spec_bdy_dry_perturb ( config_flags,                                 &
+!    (call to small_step_prep).  This is followed by computing
+!    coefficients for the vertically implicit part of the
+!    small timestep (call to calc_coef_w).  
+!    the horizontal momentum (u and v) are advanced (call to advance_uv),
+!    next mu and theta are advanced (call to advance_mu_t) followed by
+!    advancing w and the geopotential (call to advance_w).  Diagnostic
+!    back to full variables (call to small_step_finish).
+    ! Calculate coefficients for the vertically implicit acoustic/gravity wave
+       CALL wrf_debug ( 200 , ' call small_step_prep ' )
+       CALL small_step_prep( grid%u_1,grid%u_2,grid%v_1,grid%v_2,grid%w_1,grid%w_2,   &
+  !     CALL calc_p_rho( grid%al, grid%p, grid%ph_2,                 &
+     !  second time  call	
+   !    CALL calc_p_rho_fm( grid%al, grid%p, grid%pfm_2,grid%pfm_base,                 &
+         CALL calc_coef_w( a,alpha,gamma,                    &
+       CALL set_physical_bc3d( grid%u_tend, 'u', config_flags,      &
+       CALL set_physical_bc3d( grid%v_tend, 'v', config_flags,      &
+       CALL set_physical_bc3d(  rhofm_tend, 'p', config_flags,           &
+       CALL set_physical_bc3d(  pfm_tend, 'p', config_flags,           &
+      ! CALL set_physical_bc3d( grid%ph_2, 'w', config_flags,         &
+       CALL set_physical_bc3d( grid%al, 'p', config_flags,           &
+       CALL set_physical_bc3d( grid%alt, 'p', config_flags,            &      !hanshenyou   if need change to pfm_1 ? 
+       CALL set_physical_bc3d( grid%p, 'p', config_flags,            &      !hanshenyou   if need change to pfm_1 ? 
+       CALL set_physical_bc3d( grid%rhofm_base, 'p', config_flags,            &      !hanshenyou   if need change to pfm_1 ? 
+       CALL set_physical_bc3d( grid%rhofm_2, 'p', config_flags,          &    !hanshenyou
+       CALL set_physical_bc3d( grid%pfm_2, 'p', config_flags,          &    !hanshenyou
+       CALL set_physical_bc3d( rhofm_save, 't', config_flags,       &
+       CALL set_physical_bc3d( pfm_save, 't', config_flags,       &
+       CALL set_physical_bc2d( grid%mu_1, 't', config_flags,         &
+       CALL set_physical_bc2d( grid%mu_2, 't', config_flags,         &
+       CALL set_physical_bc2d( grid%mudf, 't', config_flags,         &
+         CALL advance_uv_fm ( grid%u_2, grid%u_tend, grid%v_2, grid%v_tend,        &
+         CALL set_physical_bc3d( grid%u_2, 'u', config_flags,   &
+         CALL set_physical_bc3d( grid%v_2, 'v', config_flags,   &
+           CALL spec_bdyupdate(grid%u_2, grid%u_tend, dts_rk,      &
+           CALL spec_bdyupdate(grid%v_2, grid%v_tend, dts_rk,      &
+    !     CALL advance_mu_t( grid%ww, ww1, grid%u_2, grid%u_save, grid%v_2, grid%v_save, &
+    CALL advance_rhofm_fm ( grid%rhofm_2, rhofm_tend,         &
+         CALL set_physical_bc3d( grid%rhofm_2, 'p', config_flags,             &
+           CALL spec_bdyupdate(grid%rhofm_2, rhofm_tend, dts_rk,        &
+           CALL spec_bdyupdate(grid%mu_2, mu_tend, dts_rk,       &
+           CALL spec_bdyupdate(grid%muts, mu_tend, dts_rk,      &
+         !  CALL advance_w( grid%w_2, w_tend, grid%ww, w_save,         &
+         CALL advance_w_fm ( grid%w_2, w_tend,         &
+         CALL set_physical_bc3d( grid%w_2, 'w', config_flags,   &
+    CALL advance_pfm_fm2( grid%pfm_2, pfm_tend,         &
+         CALL sumflux ( grid%u_2, grid%v_2, grid%ww,          &
+             CALL spec_bdyupdate_ph( ph_save, grid%ph_2, ph_tend,     &
+               CALL zero_grad_bdy ( grid%w_2,                         &
+               CALL spec_bdyupdate ( grid%w_2, w_tend, dts_rk,       &
+     !    CALL calc_p_rho( grid%al, grid%p, grid%ph_2,                 &
+     !  CALL calc_p_rho_fm( grid%al, grid%p, grid%pfm_2,grid%pfm_base,                 &
+         CALL set_physical_bc3d( grid%ph_2, 'w', config_flags,          &
+         CALL set_physical_bc3d( grid%al, 'p', config_flags,            &
+         CALL set_physical_bc3d( grid%p, 'p', config_flags,             &
+         CALL set_physical_bc2d( grid%muts, 't', config_flags,          &
+         CALL set_physical_bc2d( grid%mu_2, 't', config_flags,          &
+         CALL set_physical_bc2d( grid%mudf, 't', config_flags,          &
+         CALL set_physical_bc3d( grid%pfm_2, 'p', config_flags,            &
+       CALL wrf_debug ( 200 , ' call rk_small_finish' )
+       CALL calc_mu_uv_1 ( config_flags,                     &
+       CALL small_step_finish( grid%u_2, grid%u_1, grid%v_2, grid%v_1, grid%w_2, grid%w_1,     &
+!  call  to set ru_m, rv_m and ww_m b.c's for PD advection
+         CALL set_physical_bc3d( grid%ru_m, 'u', config_flags,   &
+         CALL set_physical_bc3d( grid%rv_m, 'v', config_flags,   &
+         CALL set_physical_bc3d( grid%ww_m, 'w', config_flags,   &
+         CALL set_physical_bc2d( grid%mut, 't', config_flags,   &
+         CALL set_physical_bc2d( grid%muts, 't', config_flags,   &
+     !    CALL set_physical_bc3d( grid%ru_m, 'u', config_flags,   &
+!    3D mixing (calling rk_scalar_tend) followed by an update
+!    of the scalar (calling rk_update_scalar).
+               CALL wrf_debug ( 200 , ' call rk_scalar_tend' )
+               CALL rk_scalar_tend (  im, im, config_flags, tenddec,         & 
+                   CALL q_diabatic_add  ( im, im,            & 
+                   CALL relax_bdy_scalar ( moist_tend(ims,kms,jms,im),            & 
+                   CALL spec_bdy_scalar  ( moist_tend(ims,kms,jms,im),                &
+               CALL wrf_debug ( 200 , ' call rk_update_scalar' )
+               CALL rk_update_scalar( scs=im, sce=im,                                  &
+                   CALL q_diabatic_subtr( im, im,            & 
+                   CALL flow_dep_bdy  (  moist(ims,kms,jms,im),                 &
+          CALL wrf_error_fatal(TRIM(wrf_err_message))
+           CALL wrf_debug ( 200 , ' call rk_scalar_tend for tke' )
+           CALL rk_scalar_tend ( 1, 1, config_flags, tenddec,                      & 
+           CALL wrf_debug ( 200 , ' call rk_update_scalar' )
+           CALL rk_update_scalar( scs=1,  sce=1,                                          &
+           CALL bound_tke( grid%tke_2, grid%tke_upper_bound,    &
+              CALL flow_dep_bdy (  grid%tke_2,                     &
+  !     CALL calc_p_rho_phi( moist, num_3d_m, config_flags%hypsometric_opt,                    &
+         CALL wrf_debug ( 200 , ' call rk_phys_bc_dry_2' )
+         CALL rk_phys_bc_dry_2( config_flags,                     &
+           CALL diagnose_w( ph_tend, grid%ph_2, grid%ph_1, grid%w_2, grid%muts, &
+             CALL set_physical_bc3d( moist(ims,kms,jms,im), 'p', config_flags,   &
+           CALL set_physical_bc3d( grid%tke_2 , 'p', config_flags,  &
+       CALL diagnose_w( ph_tend, grid%ph_2, grid%ph_1, grid%w_2, grid%muts, &
+   CALL wrf_debug ( 200 , ' call chem polar filter ' )
+      CALL wrf_error_fatal(TRIM(wrf_err_message))
+     CALL wrf_debug ( 200 , ' call set_phys_bc_dry_2' )
+     CALL set_phys_bc_dry_2( config_flags,                           &
+     CALL set_physical_bc3d( grid%tke_1, 'p', config_flags,   &
+     CALL set_physical_bc3d( grid%tke_2 , 'p', config_flags,  &
+       CALL set_physical_bc3d( moist(ims,kms,jms,im), 'p',           &
+   CALL wrf_debug ( 10 , ' call set_w_surface' )
+      CALL set_w_surface( config_flags, grid%znw, fill_w_flag,              &
+   CALL wrf_debug ( 200 , ' call HALO_RK_E' )
+     CALL wrf_error_fatal(TRIM(wrf_err_message))
+     CALL wrf_debug ( 200 , ' call HALO_RK_MOIST' )
+       CALL wrf_error_fatal(TRIM(wrf_err_message))
+   CALL wrf_debug ( 200 , ' call end of solve_em' )

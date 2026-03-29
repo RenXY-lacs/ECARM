@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+type: software
+title: "ECARM: Energy-Consistent Advanced Regional Model"
+message: "If you use this software, please cite it as below."
+version: 1.0.0
+date-released: "2026-03-29"
+authors:
+  - family-names: "Ren"
+    given-names: "X.-Y."
+    orcid: "0009-0008-7412-7000"
+    affiliation: "Institute of Atmospheric Physics， Chinese Academy of Sciences"
+license: "Unlicense"
+repository-code: "https://github.com/RenXY-lacs/ECARM"
+url: "https://github.com/RenXY-lacs/ECARM"
+keywords:
+  - dynamical core
+  - energy-consistent discretization
+  - atmospheric model
+  - numerical weather prediction
+  - WRF
+  - Navier-Stokes equations
+  - Lamb form
+references:
+  - type: software
+    title: "Weather Research and Forecasting (WRF) Model"
+    version: "4.2"
+    authors:
+      - family-names: "Skamarock"
+        given-names: "William C."
+    url: "https://github.com/wrf-model/WRF/releases/tag/v4.2"
+    doi: "10.5065/1dfh-6p97"

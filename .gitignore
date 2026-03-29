@@ -1,0 +1,49 @@
+# ============================================
+# .gitignore for ECARM (based on WRF v4.2)
+# ============================================
+
+# ----- Compiled objects and libraries -----
+*.o
+*.mod
+*.a
+*.exe
+
+# ----- WRF/ECARM build artifacts -----
+configure.wrf
+configure.wrf.backup
+*/depend.common
+
+# ----- Model output files -----
+ecarmout_*
+ecarminput_*
+ecarmbdy_*
+ecarmrst_*
+ecarmfdda_*
+ecarmlowinp_*
+wrfout_*
+wrfinput_*
+wrfbdy_*
+wrfrst_*
+wrffdda_*
+wrflowinp_*
+met_em.*
+
+# ----- Runtime logs -----
+rsl.out.*
+rsl.error.*
+*.log
+namelist.output
+
+# ----- System and editor files -----
+.DS_Store
+Thumbs.db
+*~
+*.swp
+*.swo
+*.bak
+\#*\#
+
+# ----- IDE directories -----
+.vscode/
+.idea/
+__pycache__/

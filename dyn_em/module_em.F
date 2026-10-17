@@ -572,7 +572,7 @@ SUBROUTINE rk_tendency ( config_flags, rk_step,                           &
                         u, v, w,                       &
                      config_flags,                  &
                         msft,zh,zs,                    &
-                        rdx,rdy,ztop,                  &
+                        rdx,rdy,ztop,rhofm,                  &
                         ids, ide, jds, jde, kds, kde,  &
                         ims, ime, jms, jme, kms, kme,  &
                         its, ite, jts, jte, kts, kte  ) 

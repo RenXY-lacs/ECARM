@@ -390,7 +390,7 @@ endif ! 20240706
                         u, v, w,                       &
                      config_flags,                  &
                         msft,zh,zs,                    &
-                        rdx,rdy,ztop,                  &
+                        rdx,rdy,ztop,rhofm,                  &
                         ids, ide, jds, jde, kds, kde,  &
                         ims, ime, jms, jme, kms, kme,  &
                         its, ite, jts, jte, kts, kte  )
@@ -411,6 +411,7 @@ endif ! 20240706
 
       !   REAL , DIMENSION( ims:ime , jms:jme ) , INTENT(IN   ) :: mut
          REAL , DIMENSION( ims:ime , kms:kme , jms:jme ) , INTENT(INOUT) :: sgmdot
+         REAL , DIMENSION( ims:ime , kms:kme , jms:jme ) , INTENT(IN   ) :: rhofm
 
          REAL , DIMENSION( ims:ime , jms:jme ) ,         INTENT(IN   ) :: msft,zs
 
@@ -438,7 +439,7 @@ endif ! 20240706
          REAL , DIMENSION( kms:kme ) :: sgmh,dsgm,dsgmh
       !   REAL , DIMENSION( ims:ime , kms:kme , jms:jme )  :: zzh,dzzh
          REAL , DIMENSION( ims:ime , kms:kme , jms:jme )  :: sx,sy !varz,varzy,varzys
-         REAL :: c1x,c1y,c2x,c2y,mrdx,sxxs,syys
+         REAL :: c0x,c0y,c1x,c1y,c2x,c2y,mrdx,sxxs,syys,aaa
     LOGICAL :: specified
 
 	specified = .false.
@@ -491,11 +492,14 @@ endif ! 20240706
       DO  i = i_start, i_endu 
 	  
 	  ! 计算边界值，如果是物理边界，zs(i-1,j) 有值
+          c0x = 0.5 * (                                                   &
+                  (ztop-zs(i,j))/ztop*rhofm(i,k,j)/msft(i,j)**2           &
+                + (ztop-zs(i-1,j))/ztop*rhofm(i-1,k,j)/msft(i-1,j)**2)
 	      c1x = (msft(i,j)*(ztop-sgmh(k))/(ztop-zs(i,j)) + msft(i-1,j)*(ztop-sgmh(k))/(ztop-zs(i-1,j)))*0.5
 	      
 	      c2x = u(i,k,j)*rdx*(zs(i,j)-zs(i-1,j))
 	   
-	      sx(i,k,j) =   c1x*c2x 
+	      sx(i,k,j) =   c0x*c1x*c2x 
 
 	
 	  
@@ -510,14 +514,16 @@ endif ! 20240706
       DO  i = i_start, i_end 
 	  
 	  
-	  
+	      c0y = 0.5 * (                                                   &
+                  (ztop-zs(i,j))/ztop*rhofm(i,k,j)/msft(i,j)**2           &
+                + (ztop-zs(i,j-1))/ztop*rhofm(i,k,j-1)/msft(i,j-1)**2)
 	   
 	      c1y = (msft(i,j)*(ztop-sgmh(k))/(ztop-zs(i,j)) + msft(i,j-1)*(ztop-sgmh(k))/(ztop-zs(i,j-1)))*0.5
 	  
 	
 	      c2y = v(i,k,j)*rdy*(zs(i,j)-zs(i,j-1))
 	
-	      sy(i,k,j) =   c1y*c2y 
+	      sy(i,k,j) =   c0y*c1y*c2y 
 		  
 	
 	  
@@ -565,7 +571,12 @@ endif ! 20240706
 	      syys = 0.5*((sy(i,k-1,j+1) + sy(i,k-1,j))*dsgm(k) +(sy(i,k,j+1) + sy(i,k,j))*dsgm(k-1) ) /(dsgm(k-1) + dsgm(k) ) 
 	  
 	  
-	      sgmdot(i,k,j) = - sxxs - syys + ztop/(ztop-zs(i,j))*w(i,k,j)
+	      aaa = msft(i,j)**2 / (                                         &
+                    (ztop-zs(i,j))/ztop                                  &
+                  * 0.5*(rhofm(i,k-1,j)+rhofm(i,k,j)))
+
+          sgmdot(i,k,j) = -aaa*(sxxs+syys)                                &
+                         + ztop/(ztop-zs(i,j))*w(i,k,j)
 	  
 
 		
